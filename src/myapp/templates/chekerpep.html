@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Проверка работ на pep8</h1>
+    <pre id="result"></pre>
+    <script>
+      async function send() {
+        const resp = await fetch('/api/data', {
+          method: 'POST',
+          headers: {'Content-Type application/json'},
+          body: JSON.stringify({sample: Math.random()})
+        });
+        document.getElementById('result').textContent = await resp.text();
+      }
+      setInterval(send, 3000);
+    </script>
+
+
+
+{% endblock content %}
