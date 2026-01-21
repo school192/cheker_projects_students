@@ -1,7 +1,7 @@
 <nav class=navigation>
 {% for menu_item in [
   ("main.index", "Главная"),
-  ("chekerpep", "Проверка на pep8")
+  ("chekerpep.chekerpep", "Проверка на pep8")
   ] %}
   <a class=button href="{{ url_for(menu_item[0]) }}">{{ menu_item[1] }}</a>
 {% endfor %}
