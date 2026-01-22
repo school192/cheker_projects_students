@@ -32,3 +32,10 @@ table {
     background: white;
     font-size: 16px;
 }
+
+.form-group {
+    margin-bottom: 15px;
+    font-size: 16px;
+    background-color: #ffd5be;
+    width: fit-content;
+}

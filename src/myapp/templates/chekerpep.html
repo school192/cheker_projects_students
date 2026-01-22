@@ -2,7 +2,12 @@
 {% block content %}
     <h1>Страница для проверки списка проекта на pep8</h1>
     <form method='POST'>
-        <div><label>Список ссылок на репозитории: <input type=textbox name=list_reps size="100"></label></div>
+        <div class=form-group>
+
+          <label>Список ссылок на репозитории:<br>
+            <textarea name="list_reps" rows="30" cols="60"></textarea>
+          </label>
+        </div>
         <button type=submit value='Submit'>Отправить на проверку</button>
     </form>
 {% endblock content %}

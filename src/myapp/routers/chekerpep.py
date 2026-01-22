@@ -7,5 +7,5 @@ chekerpep_bp = Blueprint("chekerpep", __name__)
 def chekerpep():
     if request.method == 'GET':
         return render_template("chekerpep.html", title="Проверка на pep8"), 200
-    print(request.form.get('list_reps'))
-    return ''
+    result = request.form.get('list_reps')
+    return result, 200
