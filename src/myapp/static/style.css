@@ -34,8 +34,23 @@ table {
 }
 
 .form-group {
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 45%;
+    top: 5%;
+    padding: 10px;
+    margin-top: 20px;
     margin-bottom: 15px;
     font-size: 16px;
     background-color: #ffd5be;
-    width: fit-content;
+}
+.result {
+    width: 45%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 5%;
 }

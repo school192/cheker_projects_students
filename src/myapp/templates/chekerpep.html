@@ -1,13 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Страница для проверки списка проекта на pep8</h1>
+    <div class=form-group>
     <form method='POST'>
-        <div class=form-group>
+
 
           <label>Список ссылок на репозитории:<br>
-            <textarea name="list_reps" rows="30" cols="60"></textarea>
+            <textarea name="list_reps" rows="30" cols="100"></textarea>
           </label>
-        </div>
+
         <button type=submit value='Submit'>Отправить на проверку</button>
     </form>
+    </div>
+    <div class="result">
+        {% if request.method == 'POST' %}
+            <h2>Результаты проверки:</h2>
+            <pre>{{ result }}</pre>
+        {% endif %}
 {% endblock content %}
