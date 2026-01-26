@@ -54,3 +54,8 @@ table {
     left: 50%;
     top: 5%;
 }
+.result.all-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    width: 100%;
+}

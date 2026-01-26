@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Результаты проверки на pep8</h1>
+    <div class="result.all">
+        {% if results %}
+            <h2>Результаты проверки:</h2>
+            <table>
+                <tr>
+                    <th>Автор</th>
+                    <th>Ссылка на репозиторий</th>
+                    <th>Статус</th>
+                    <th>Детали</th>
+                </tr>
+                {% for author, repo, status, status in results %}
+                <tr>
+                    <td>{{ author }}</td>
+                    <td>{{ repo }}</td>
+                    <td>{{ status }}</td>
+                    <td>{{ details }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Нет результатов для отображения.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

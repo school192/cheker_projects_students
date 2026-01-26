@@ -15,6 +15,18 @@
     <div class="result">
         {% if request.method == 'POST' %}
             <h2>Результаты проверки:</h2>
-            <pre>{{ result }}</pre>
+            <table>
+                <tr>
+                    <th>Репозиторий</th>
+                    <th>Статус</th>
+                </tr>
+                {% for repo, status in results %}
+                <tr>
+                    <td>{{ repo }}</td>
+                    <td>{{ status }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <Input type="button" value="Проверить на pep8" onclick="location.href ='chekerpep/results'">
         {% endif %}
 {% endblock content %}
