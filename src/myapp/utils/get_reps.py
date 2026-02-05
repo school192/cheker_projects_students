@@ -1,4 +1,5 @@
 import requests
+import zipfile
 
 PATH_GITHUB = "https://github.com/"
 PATH_GITHUB_ZIP = "/archive/refs/heads/main.zip"
@@ -13,6 +14,8 @@ def get_repository(author, pass_to_github) -> tuple:
         return (author, "Ошибка при получении репозитория")
     with open(f"data/{author}.zip", "wb") as file:
         file.write(rep.content)
+    with zipfile.ZipFile(f"data/{author}.zip", "r") as zip_ref:
+        zip_ref.extractall(f"data/{author}_unzipped")
     return (author, "Успешно загружен")
 
 
