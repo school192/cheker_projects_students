@@ -7,14 +7,12 @@
             <table>
                 <tr>
                     <th>Автор</th>
-                    <th>Ссылка на репозиторий</th>
                     <th>Статус</th>
                     <th>Детали</th>
                 </tr>
-                {% for author, repo, status, status in results %}
+                {% for author, status, details in results %}
                 <tr>
                     <td>{{ author }}</td>
-                    <td>{{ repo }}</td>
                     <td>{{ status }}</td>
                     <td>{{ details }}</td>
                 </tr>

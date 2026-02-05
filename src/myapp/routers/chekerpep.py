@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 from myapp.utils.get_reps import get_info
+from myapp.utils.chekreppep import start_chekreppep
 
 chekerpep_bp = Blueprint("chekerpep", __name__)
 
@@ -15,7 +16,8 @@ def chekerpep():
 @chekerpep_bp.route("/chekerpep/results", methods=['GET'])
 def chekerpep_results():
     if request.method == 'GET':
-        return render_template("chekerpepresults.html", title="Результаты проверки на pep8"), 200
+        results = start_chekreppep()
+        return render_template("chekerpepresults.html", title="Результаты проверки на pep8", results=results), 200
     result = "Тут будет результаты работы проверки"
     return render_template("chekerpepresults.html", title="Результаты проверки на pep8", results=result), 200
 
