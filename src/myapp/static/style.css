@@ -25,6 +25,7 @@ body {
     background: #f6f6f6;
 }
 table {
+    border: 1px;
     border-collapse: collapse;
     width: 80%;
     margin-top: 20px;

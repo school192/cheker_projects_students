@@ -14,11 +14,11 @@ def chekreppep(author: str) -> str:
     # Заглушка для проверки pep8
     path_to_repo = f"data/{author}_unzipped"
     os.system(f"cd {path_to_repo} && flake8 . > files_to_check.txt")
-    os.system(f"cd {path_to_repo} && find . -name *.py > file_python.txt")
+    os.system(f"cd {path_to_repo} && find . -name *.py ")
     with open(f"{path_to_repo}/files_to_check.txt", "r") as f:
-        details = f.read()
+        details = f.readlines()
     if not details:
-        details = "Ошибок не найдено"
+        details = ["Ошибок не найдено"]
     results = (author, "Тут будет статус", details)
     return results
 

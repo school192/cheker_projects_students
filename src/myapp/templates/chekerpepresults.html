@@ -14,7 +14,15 @@
                 <tr>
                     <td>{{ author }}</td>
                     <td>{{ status }}</td>
-                    <td>{{ details }}</td>
+                    <td>
+                        <ul>
+                            {% for elem in details%}
+                            <li>
+                            {{elem}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
